@@ -1,0 +1,27 @@
+# 1 - Напишите программу, которая принимает на вход вещественное число и показывает сумму его цифр.
+#  Учтите, что числа могут быть отрицательными
+
+
+
+# 67.82 -> 23
+# 0.56 -> 11
+def enter_float_number():
+    while(True):
+        try:
+            number = input("Введите вещественное число: ")
+            float(number)
+            break
+        except ValueError:
+            print("Требуется ввести вещественное число")
+    return number
+
+def summ_digit(*args):
+    sum = 0
+    num = str(number).replace(".", "")
+    for index in num:
+        sum += int(index)
+    return sum
+
+number = enter_float_number()
+
+print(f"В числе {number} сумма всех цифр равна {summ_digit(number)}")
